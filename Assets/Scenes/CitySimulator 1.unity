@@ -883,7 +883,7 @@ MonoBehaviour:
   tutorialText: {fileID: 190271792}
   buildingPrefabs:
   - {fileID: 4843237588564660601, guid: e677172f330cd4e47b0d1f70195b12c3, type: 3}
-  - {fileID: 1333753113415277159, guid: 83b58fb7c105ce94582e4e24ad862b35, type: 3}
+  - {fileID: 1333753113415277159, guid: 03adb5266ce84a64289ad0e3bdee1f4d, type: 3}
 --- !u!1 &491716291 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4843237588564660601, guid: e677172f330cd4e47b0d1f70195b12c3, type: 3}
@@ -2410,6 +2410,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114196496685157712, guid: 5bb46bae81bf04608ac699be504c5e66, type: 3}
+      propertyPath: _terrain._layerProperty.colliderOptions.addCollider
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114196496685157712, guid: 5bb46bae81bf04608ac699be504c5e66, type: 3}
       propertyPath: _vectorData._layerProperty.vectorSubLayers.Array.data[0].materialOptions.materials.Array.data[0].Materials.Array.data[0]
       value: 
       objectReference: {fileID: 1101621459}
@@ -2940,6 +2944,9 @@ MonoBehaviour:
   - {fileID: 587610448}
   buildingPrefabs:
   - {fileID: 4843237588564660601, guid: e677172f330cd4e47b0d1f70195b12c3, type: 3}
+  - {fileID: 1333753113415277159, guid: 03adb5266ce84a64289ad0e3bdee1f4d, type: 3}
+  buildingHologramPrefabs:
+  - {fileID: 4843237588564660601, guid: f7beca125208281478de6dc09498e9c4, type: 3}
   - {fileID: 1333753113415277159, guid: 83b58fb7c105ce94582e4e24ad862b35, type: 3}
 --- !u!4 &1829059722
 Transform:

@@ -7,14 +7,22 @@ public class AssetPlacer : MonoBehaviour
     public Button[] assetButtons;     // Array of buttons for selecting assets
     public GameObject[] assets;       // Array of prefabs corresponding to each button
     public GameObject[] buildingPrefabs; // Array of building prefabs for key-based selection
+    public GameObject[] buildingHologramPrefabs; // Array of hologram prefabs corresponding to each building prefab
 
     private GameObject selectedAsset = null; // Track the currently selected asset
     private GameObject selectedBuilding = null; // Track the currently selected building
+    private GameObject buildingHologram = null; // Track the hologram of the selected building
     private bool isBuildMode = false;        // Track if in build mode
     private bool buildingSelected = false;   // Track if a building has been selected
 
+    // Plane for positioning holograms
+    private Plane placementPlane;
+
     void Start()
     {
+        // Initialize the placement plane
+        placementPlane = new Plane(Vector3.up, Vector3.zero); // Plane aligned with the ground
+
         // Assign button click events
         for (int i = 0; i < assetButtons.Length; i++)
         {
@@ -30,6 +38,7 @@ public class AssetPlacer : MonoBehaviour
         Debug.Log("Selected Asset: " + selectedAsset.name);
         isBuildMode = true; // Enable build mode after selecting an asset
         buildingSelected = false; // Deselect any selected building
+        DestroyHologram(); // Destroy any existing hologram
     }
 
     // Function to select a building using number keys
@@ -40,12 +49,15 @@ public class AssetPlacer : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Alpha1 + i))
             {
-                if (selectedBuilding != null)
+                if (buildingHologram != null)
                 {
-                    Destroy(selectedBuilding); // Destroy previously selected building if any
+                    Destroy(buildingHologram); // Destroy existing hologram if any
                 }
-                selectedBuilding = Instantiate(buildingPrefabs[i]);
-                selectedBuilding.SetActive(false); // Hide initially until placement
+
+                selectedBuilding = buildingPrefabs[i];
+                // Instantiate the corresponding hologram prefab
+                buildingHologram = Instantiate(buildingHologramPrefabs[i]);
+                buildingHologram.SetActive(false); // Hide initially until placement
                 buildingSelected = true; // Mark a building as selected
                 isBuildMode = true; // Enable build mode
                 selectedAsset = null; // Deselect any selected asset
@@ -66,6 +78,23 @@ public class AssetPlacer : MonoBehaviour
         // Select a building using number keys
         SelectBuilding();
 
+        // Check for mouse position and update hologram placement
+        if (isBuildMode && buildingSelected && buildingHologram != null)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (placementPlane.Raycast(ray, out float enter))
+            {
+                Vector3 hitPoint = ray.GetPoint(enter); // Get the point on the plane
+                // Update hologram position
+                buildingHologram.transform.position = hitPoint; // Place the hologram at the hit point
+                buildingHologram.SetActive(true); // Show the hologram
+            }
+            else
+            {
+                buildingHologram.SetActive(false); // Hide if not over valid ground
+            }
+        }
+
         // Place the selected asset or building when clicking on the scene in build mode
         if (isBuildMode && Input.GetMouseButtonDown(0))
         {
@@ -73,21 +102,23 @@ public class AssetPlacer : MonoBehaviour
             {
                 // Raycast to determine the placement position in the scene
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray, out RaycastHit hit))
+                if (placementPlane.Raycast(ray, out float enter))
                 {
                     // Instantiate the selected asset at the hit position
-                    Instantiate(selectedAsset, hit.point, Quaternion.Euler(-90, 0, 0), placementArea);
+                    Vector3 hitPoint = ray.GetPoint(enter); // Get the hit position on the plane
+                    Instantiate(selectedAsset, hitPoint, Quaternion.identity, placementArea); // Keep asset upright
                 }
             }
             else if (buildingSelected && selectedBuilding != null)
             {
                 // Raycast to determine the placement position in the scene
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray, out RaycastHit hit))
+                if (placementPlane.Raycast(ray, out float enter))
                 {
-                    // Set the position and activate the selected building for placement
-                    selectedBuilding.transform.position = hit.point;
-                    selectedBuilding.SetActive(true);
+                    // Instantiate the selected building at the hit position
+                    Vector3 hitPoint = ray.GetPoint(enter); // Get the hit position on the plane
+                    Instantiate(selectedBuilding, hitPoint, selectedBuilding.transform.rotation, placementArea); // Use default rotation of the building
+                    DestroyHologram(); // Remove the hologram after placement
                     selectedBuilding = null; // Deselect the building after placement
                     buildingSelected = false; // Disable building selection
                 }
@@ -102,12 +133,19 @@ public class AssetPlacer : MonoBehaviour
         if (!enable)
         {
             selectedAsset = null; // Deselect the asset when exiting build mode
-            if (selectedBuilding != null)
-            {
-                Destroy(selectedBuilding); // Destroy the preview of selected building when exiting build mode
-            }
+            DestroyHologram(); // Destroy the hologram when exiting build mode
             buildingSelected = false; // Disable building selection when exiting build mode
         }
         Debug.Log("Build Mode: " + isBuildMode);
+    }
+
+    // Helper function to destroy the hologram
+    private void DestroyHologram()
+    {
+        if (buildingHologram != null)
+        {
+            Destroy(buildingHologram);
+            buildingHologram = null; // Clear reference
+        }
     }
 }
