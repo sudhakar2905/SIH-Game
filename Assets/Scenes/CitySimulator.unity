@@ -1095,7 +1095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialPanel: {fileID: 1335464087}
-  displayTime: 10
+  tutorialText: {fileID: 190271792}
 --- !u!1 &499624659
 GameObject:
   m_ObjectHideFlags: 0
@@ -3250,7 +3250,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1670118697}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 721279288468038359, guid: 5bb46bae81bf04608ac699be504c5e66, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bb46bae81bf04608ac699be504c5e66, type: 3}

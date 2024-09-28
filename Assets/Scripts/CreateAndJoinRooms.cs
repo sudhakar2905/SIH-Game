@@ -35,6 +35,6 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        PhotonNetwork.LoadLevel("CitySimulator");
+        PhotonNetwork.LoadLevel("CitySimulator 1");
     }
 }

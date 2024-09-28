@@ -3,11 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\sudha\\Desktop\\SIH-Software\\SIH-Final\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{16972052-8599-3A23-EFDA-62BAEEEAB1A3}|Assembly-CSharp.csproj|c:\\users\\sudha\\desktop\\sih-software\\sih-final\\assets\\scripts\\tutorial manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sudha\\Desktop\\SIH-Software\\SIH-GameFramework\\Assets\\Photon\\PhotonUnityNetworking\\Code\\PhotonNetwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16972052-8599-3A23-EFDA-62BAEEEAB1A3}|Assembly-CSharp.csproj|C:\\Users\\sudha\\Desktop\\SIH-Software\\SIH-Final\\assets\\scripts\\assetplacer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16972052-8599-3A23-EFDA-62BAEEEAB1A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\assetplacer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16972052-8599-3A23-EFDA-62BAEEEAB1A3}|Assembly-CSharp.csproj|C:\\Users\\sudha\\Desktop\\SIH-Software\\SIH-Final\\assets\\scripts\\tutorial manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{16972052-8599-3A23-EFDA-62BAEEEAB1A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\tutorial manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{16972052-8599-3A23-EFDA-62BAEEEAB1A3}|Assembly-CSharp.csproj|c:\\users\\sudha\\desktop\\sih-software\\sih-final\\assets\\scenes\\terraingroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{16972052-8599-3A23-EFDA-62BAEEEAB1A3}|Assembly-CSharp.csproj|C:\\Users\\sudha\\Desktop\\SIH-Software\\SIH-Final\\assets\\scenes\\terraingroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{16972052-8599-3A23-EFDA-62BAEEEAB1A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scenes\\terraingroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -23,19 +30,43 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Tutorial Manager.cs",
-              "DocumentMoniker": "C:\\Users\\sudha\\Desktop\\SIH-Software\\SIH-Final\\Assets\\Scripts\\Tutorial Manager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Tutorial Manager.cs",
-              "ToolTip": "C:\\Users\\sudha\\Desktop\\SIH-Software\\SIH-Final\\Assets\\Scripts\\Tutorial Manager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Tutorial Manager.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAowEAAAAAAAAAA",
+              "Title": "PhotonNetwork.cs",
+              "DocumentMoniker": "C:\\Users\\sudha\\Desktop\\SIH-Software\\SIH-GameFramework\\Assets\\Photon\\PhotonUnityNetworking\\Code\\PhotonNetwork.cs",
+              "RelativeDocumentMoniker": "..\\SIH-GameFramework\\Assets\\Photon\\PhotonUnityNetworking\\Code\\PhotonNetwork.cs",
+              "ToolTip": "C:\\Users\\sudha\\Desktop\\SIH-Software\\SIH-GameFramework\\Assets\\Photon\\PhotonUnityNetworking\\Code\\PhotonNetwork.cs",
+              "RelativeToolTip": "..\\SIH-GameFramework\\Assets\\Photon\\PhotonUnityNetworking\\Code\\PhotonNetwork.cs",
+              "ViewState": "AQIAAAwMAAAAAAAAAAAowCYMAABnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T02:09:52.54Z",
+              "WhenOpened": "2024-09-28T05:47:33.854Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "AssetPlacer.cs",
+              "DocumentMoniker": "C:\\Users\\sudha\\Desktop\\SIH-Software\\SIH-Final\\Assets\\Scripts\\AssetPlacer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\AssetPlacer.cs",
+              "ToolTip": "C:\\Users\\sudha\\Desktop\\SIH-Software\\SIH-Final\\Assets\\Scripts\\AssetPlacer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\AssetPlacer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T05:22:44.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Tutorial Manager.cs",
+              "DocumentMoniker": "C:\\Users\\sudha\\Desktop\\SIH-Software\\SIH-Final\\Assets\\Scripts\\Tutorial Manager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Tutorial Manager.cs",
+              "ToolTip": "C:\\Users\\sudha\\Desktop\\SIH-Software\\SIH-Final\\Assets\\Scripts\\Tutorial Manager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Tutorial Manager.cs",
+              "ViewState": "AQIAAFIAAAAAAAAAAAAkwFUAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T02:09:52.54Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "TerrainGroup.cs",
               "DocumentMoniker": "C:\\Users\\sudha\\Desktop\\SIH-Software\\SIH-Final\\Assets\\Scenes\\TerrainGroup.cs",
               "RelativeDocumentMoniker": "Assets\\Scenes\\TerrainGroup.cs",
@@ -43,8 +74,7 @@
               "RelativeToolTip": "Assets\\Scenes\\TerrainGroup.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T02:06:37.434Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-28T02:06:37.434Z"
             }
           ]
         }
